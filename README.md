@@ -3,13 +3,13 @@ Convert function with callback to promise
 
 ## common function with callback
 
-function func(para, _cb) {
-	setTimeout(()=>{
-		let err = null;
-		let result = para*2;
-		_cb(err, result);		
-	}, para);
-}
+	function func(para, _cb) {
+		setTimeout(()=>{
+			let err = null;
+			let result = para*2;
+			_cb(err, result);		
+		}, para);
+	}
 
 ## convert to promise
 
