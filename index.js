@@ -1,13 +1,19 @@
 'use strict'
 
   
-function sleep(ms) {
-	return new Promise(function (resolve, reject) {
-		setTimeout(function () {
-			resolve();
-		}, ms);
-	})
-};
+function sleep(ms,cb) {
+    if(typeof(cb) == 'function') {
+        setTimeout(function () {
+            cb();
+        }, ms);
+    } else {
+        return new Promise(function (resolve) {
+            setTimeout(function () {
+                resolve();
+            }, ms);
+        })
+    }
+}
 function promisefy(func, paras=[], obj=null){
     return new Promise(function(success, fail){
         function _cb(err, result){
