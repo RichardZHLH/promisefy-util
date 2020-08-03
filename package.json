@@ -4,13 +4,15 @@
   "description": "promisefy util",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "npx mocha test -t 0  test/test.js"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "keywords": [
     ""
   ],
   "author": "zhanglihua",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^8.1.0"
+  }
 }
