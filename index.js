@@ -27,11 +27,11 @@ async function sleepUntil(time) {
     if(cur >= time) {
         return
     } else {
-        return sleep(cur-time)
+        return sleep(time-cur)
     }
 }
 
 
-exports.promisefy = promisefy;
-
-exports.sleep = sleep;
+module.exports = {
+    promisefy, sleep,sleepUntil,
+}

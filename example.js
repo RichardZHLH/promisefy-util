@@ -1,14 +1,10 @@
 'use strict'
 
-const pf = require('./index.js');
-
-async function wrapSleep(ms,cb) {
-	return await pf.sleep(ms,cb)
-}
+const pu = require('./index.js');
 
 async function main(){
-	pf.sleep(2000,  ()=>{console.log("this is cb")});
-	console.log(" before await sleep"); await  pf.sleep(3000)
-	console.log("main done");
+	console.log("before await sleep:", Date.now()); 
+	await  pu.sleep(3000)
+	console.log("main done:", Date.now());
 }
 main();
